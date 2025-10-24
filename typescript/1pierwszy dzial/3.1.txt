@@ -1,0 +1,9 @@
+1. number
+2. string
+3. tablica z boolean w środku boolean[]
+4. jest to obiekt
+5. tablica z number w środku number[]
+6. any
+7. pusta tablica
+8. i 9. any jeśli strictNullChecks jest wyłączony jeśli 
+jest on włączony to dla null: "null", a dla undefined: "undefined"

@@ -1,0 +1,4 @@
+1.Na systemach Unix używamy sudo npm install -g typescript
+2.sprawdź czy Node.js został poprawnie zainstalowany i zrestartuj terminal
+3. Restartujemy edytor lub sprawdzamy ustawienia TypeScript w preferencjach  
+4. można spróbować skorzystać z innego środowiska bądź zwolnić pamięć

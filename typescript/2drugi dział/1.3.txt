@@ -1,0 +1,113 @@
+type Autor={
+  imie: string;
+  nazwisko: string;
+  dataUrodzenia: string;
+  napisaneKsiazki: Ksiazka[];};
+type Ksiazka={
+  tytul:string;
+  autor:Autor;
+  ISBN:string;
+  rokWydania: number;
+  dostepna: boolean;
+};
+
+type DaneOsoby={
+  imie: string;
+  nazwisko: string;
+  email: string;
+};
+
+type Czytelnik={
+  dane: DaneOsoby;
+  wypozyczoneKsiazki: Ksiazka[];
+};
+type Wypozyczenie = {
+  ksiazka: Ksiazka;
+  czytelnik: Czytelnik;
+  dataWypozyczenia: string;
+  dataZwrotu: string;
+};
+const autor1:Autor={
+  imie: "JK",
+  nazwisko: "Rowling",
+  dataUrodzenia: "1967-07-31",
+  napisaneKsiazki: []
+};
+const ksiazka1: Ksiazka={
+  tytul:"Harry Potter i Kamień Filozoficzny",
+  autor:autor1,
+  ISBN:"978-0747532699",
+  rokWydania: 1997,
+  dostepna: true
+};
+
+autor1.napisaneKsiazki.push(ksiazka1);
+
+const ksiazka2: Ksiazka = {
+  tytul: "Harry Potter i Komnata Tajemnic",
+  autor: autor1,
+  ISBN: "978-0747538493",
+  rokWydania: 1998,
+  dostepna: true
+};
+
+autor1.napisaneKsiazki.push(ksiazka2);
+const czytelnik1: Czytelnik = {
+  dane: { imie: "Jan", nazwisko: "Kowalski",email:"jan.kowalski@poczta.cos" },
+  wypozyczoneKsiazki: []
+};
+function dodajKsiazke(ksiazki: Ksiazka[], nowaKsiazka: Ksiazka): void {
+  ksiazki.push(nowaKsiazka);
+}
+function wypozyczKsiazke(wypozyczenia: Wypozyczenie[], ksiazka: Ksiazka, czytelnik: Czytelnik): void {
+  if (!ksiazka.dostepna) {
+    console.log(`Książka "${ksiazka.tytul}" jest niedostępna.`);
+    return;
+  }
+
+  const noweWypozyczenie: Wypozyczenie = {
+    ksiazka,
+    czytelnik,
+    dataZwrotu: "22-10-2030",
+    dataWypozyczenia:"22-09-2030",
+    
+  };
+
+  wypozyczenia.push(noweWypozyczenie);
+  ksiazka.dostepna = false;
+  czytelnik.wypozyczoneKsiazki.push(ksiazka);
+  console.log(`Książka "${ksiazka.tytul}" została wypożyczona przez ${czytelnik.dane.imie}.`);
+}
+function zwrocKsiazke(wypozyczenia: Wypozyczenie[], ksiazka: Ksiazka, czytelnik: Czytelnik): void {
+  const wypozyczenie = wypozyczenia.find(w => w.ksiazka === ksiazka && w.czytelnik === czytelnik);
+  if (!wypozyczenie) {
+    console.log("Nie znaleziono wypożyczenia.");
+    return;
+  }
+  wypozyczenie.dataZwrotu = new Date().toISOString();
+  ksiazka.dostepna = true;
+  czytelnik.wypozyczoneKsiazki = czytelnik.wypozyczoneKsiazki.filter(k => k !== ksiazka);
+  console.log(`Książka "${ksiazka.tytul}" została zwrócona.`);
+}
+
+function generujRaport(wypozyczenia: Wypozyczenie[]): void {
+  console.log("=== Raport wypożyczeń ===");
+  wypozyczenia.forEach(w => {
+    console.log(`Książka: ${w.ksiazka.tytul}, Czytelnik: ${w.czytelnik.dane.imie} ${w.czytelnik.dane.nazwisko}, Wypożyczono: ${w.dataWypozyczenia}, Zwrot: ${w.dataZwrotu ?? "nie oddano"}`);
+  });
+}
+const biblioteka: Ksiazka[] = [ksiazka1, ksiazka2];
+const listaWypozyczen: Wypozyczenie[] = [];
+
+const ksiazka3: Ksiazka = {
+  tytul: "Nowa Książka",
+  autor: autor1,
+  ISBN: "123-4567890123",
+  rokWydania: 2025,
+  dostepna: true
+};
+dodajKsiazke(biblioteka, ksiazka3);
+wypozyczKsiazke(listaWypozyczen, ksiazka1, czytelnik1);
+wypozyczKsiazke(listaWypozyczen, ksiazka1, czytelnik1);
+zwrocKsiazke(listaWypozyczen, ksiazka1, czytelnik1);
+generujRaport(listaWypozyczen);

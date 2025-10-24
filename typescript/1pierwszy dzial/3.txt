@@ -1,0 +1,13 @@
+1. do kalkuratora lepszy będzie javascript użycie typescript byłoby nieco dłuższe, można
+użyć javascipty ponieważ zmiennę raczej nie będą się powtarzać i nie będzie ponownych 
+inkrementacji poza tym jest to kod dla jednej osoby więc nazwy zmiennych nie będą się
+ aż tak powtarzać jak mogłoby to wyglądać pracująć w zespole
+2. taki długi kod będzie lepszy do zrobienia w typescript jest lepiej przystosowany 
+do pracy z zespołem, jeżeli ktoś zrobi zmienną int ilość to ktoś nie będzie mógł
+ ponownie zainkrementować jej w kodzie na np stringa 
+3. Javascript skoro to tylko prototyp test to można użyć javascipta żeby szybciej to 
+przestować
+4. javascript skoro to biblioteka javascript to dziwne by było robienie biblioteki 
+javascript w typescript
+5.typescript działa się w tym kodzie na "backendzie" oraz na backupie więc ważne jest 
+aby kod nie miał błędów żeby zmienne miały wymagane wartości

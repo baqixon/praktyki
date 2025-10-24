@@ -1,0 +1,70 @@
+type Gierka = {
+    id: number;
+    nazwa: string;
+    cena: number;
+    opis: string;
+};
+type Kategoria ={
+  id: number;
+    nazwa: string;
+};
+type AdresDostawy={
+    ulica: string;
+    miasto: string;
+    kodPocztowy: string;
+    kraj: string;
+};
+
+type PozycjaZamowienia ={
+produkt: Gierka;
+ilosc: number;
+};
+type Zamowienie = {
+   id: number;
+   produkty: PozycjaZamowienia[];
+   adresDostawy: AdresDostawy;
+   status: "Oczekujące"| "Wysłane"|"Zrealizowane"| "Anulowane";
+};
+const kategoriaRPG:Kategoria = {id: 1,nazwa:"RPG" };
+const kategoriaFPS:Kategoria={ id:2,nazwa:"FPS"};
+
+const gra1:Gierka={
+    id: 101,
+    nazwa: "Elder Scrolls",
+    cena: 120,
+    opis: "Epicka gra RPG w otwartym świecie"
+};
+
+const gra2: Gierka={
+    id: 102,
+    nazwa:"Call of Duty: Modern Warfare",
+    cena: 250,
+    opis:"Dynamiczna strzelanka FPS"
+};
+const adresKlienta: AdresDostawy={
+    ulica: "ul. Gamingowa 15",
+    miasto: "Warszawa",
+    kodPocztowy: "00-123",
+    kraj: "Polska"
+};
+const pozycjaGra1: PozycjaZamowienia={
+
+    produkt: gra1,
+    ilosc: 1};
+
+const pozycjaGra2: PozycjaZamowienia={
+    produkt: gra2,
+    ilosc: 2
+
+};
+
+
+const zamowienieKlienta:Zamowienie={
+
+    id: 5001,
+    produkty:[pozycjaGra1, pozycjaGra2],
+    adresDostawy: adresKlienta,
+    status: "Oczekujące"
+};
+
+console.log("Zamówienie klienta:", zamowienieKlienta);

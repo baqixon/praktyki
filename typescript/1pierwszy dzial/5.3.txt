@@ -1,0 +1,5 @@
+debugując ten kod funkcji zacząłbym od ustawienia breakpointu na początku inicjowania zmiennych
+później  na początku pętli żeby sprawdzić czy pętla prawidłowo się wykonuje, później w if ie żeby
+zobaczyć kiedy warunek się wykonuje i w returnie aby zobaczyć co końcowo wychodzi z funkcji.
+po sprawdzeniu problemem jest Zły zakres pętli: powinna iterować od i = 0 do i < liczby.length,
+bo w JS/TS indeksy kończą się na length - 1. Zaczynanie od i = 1 i brak dodania liczby[0] do sumy.

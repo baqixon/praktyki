@@ -1,0 +1,16 @@
+1. typescript nie pozwoliłby na zrobienie z inta stringa np 
+jakbyśmy zamiast 19 wpisali adam mickiewicz do zmiennej ilosc_ksiazek 
+to będzie to pokazane jako błąd w kompilacji
+2. typescript upewniłby się przy kompilacji że zmienna ma dany typ zmiennej np string,
+float, int więc jakbyśmy chcieli np. wpisać do zmiennej int ilosc_ksiazek np.: 5 
+a do float cena: 6,99 ale przez przypadek pomylił się i dał te wartości na odwrót
+to w miejscu wpisywania do ilosc_ksiazek "5" cena wyskoczyłby błąd
+3. gdybyśmy chieli aby w naszym programie było wyświetlane przez warunek "if" czy
+dana książka jest w bibliotece to gdybyśmy to zrobili w typescript to mając małą wiedzę
+moglibyśmy do stringa czy_jest_ksiazka zapisać wartość "true" a następnie napisać if x=true
+ to jeżeli dana książka będzie to warunek i tak będzie niespełniony
+4. jeśłi będziemy chcieć pomnożyć int ilosc_ksiazek przez float cena to dzięki typescript 
+przy zapisaniu tych zmiennych będziemy mieli pewność że się one nie zmienią i że np cena
+nie jest we string-u
+5. typscript to język dla większych programów więc używanie jego w programie do biblioteki
+to bardzo dobry pomysł 

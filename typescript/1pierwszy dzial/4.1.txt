@@ -1,0 +1,22 @@
+ "compilerOptions": {  
+
+ "target": "ES2018",  //dodaje nowoczniejsze funkcje
+
+ "module": "commonjs",  //używane w Node.js
+
+ "rootDir": "./source",  //wskazuje katalog z kodem źródłowym TypeScript
+
+ "outDir": "./build",  //określa, gdzie mają być zapisywane skompilowane pliki JavaScript.  
+
+ "strict": true,  //włącza wszystkie dostępne kontrole typu, znacznie 
+zwiększając bezpieczeństwo kodu
+
+ "removeComments": true,  //usuwana komentarzez podstawowego pliku wygenerowanego kodu JavaScript
+
+ "noEmitOnError": true, //jeśli  występuje błąd w ts
+ nie zostanie utworzony z niego plik js
+
+ "sourceMap": true  //pliki pomagające w debugowaniu – 
+pozwalają debugować kod TypeScript zamiast wygenerowanego JavaScript:  
+
+ },  

@@ -1,0 +1,33 @@
+1 fragment 
+
+
+email: 'lol@poczta.com'
+
+trzeba wszystkim zmiennym nadać wartość
+
+2 fragment 
+
+ceny to tablica number[] więc trzeba albo napisać ceny[0]=150 i odpóścić sobie zł
+albo napisać tablicę string i wszędzie dać zł
+
+3 fragment 
+
+nie ma returna napisanego
+
+function obliczRabat(cena: number, procent: number): number {
+  let rabat = cena * procent / 100;
+  console.log(`Rabat wynosi: ${rabat}`);
+  return rabat;
+}
+4 fragment 
+
+nie można dodać inta do string[] trzeba dodać cudzysłów albo skorzystać z uni
+
+produkty.push('1299');
+
+let produkty: (string | number)[] = ['laptop', 'telefon'];
+produkty.push(1299);
+
+
+
+

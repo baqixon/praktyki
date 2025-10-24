@@ -1,0 +1,17 @@
+najpierw najlepiej zacząć od umówienia się aby każdy z zespołu pracował na danym systemie
+operacyjnym, np linuxie ale do przykładu użyję windowsa
+instalujemy Node.js (który zawiera npm),
+następnie instalujemy kompilator TypeScript, wpisując w teminalu: npm install –g typescript  
+później sprawdzamy wersję komendą: tsc -version jeśli się ona zgadza możemy przejść dalej.
+Na końcu skonfigurujemy edytor kodu instalujemy visual studio code i po konfikuracji wszyscy 
+mają spójne środowiska. Choć VS Code ma wbudowane wsparcie dla TypeScript, warto zainstalować
+kilka dodatkowych rozszerzeń:  
+
+TypeScript Importer – automatyczne importowanie modułów  
+
+Bracket Pair Colorizer – kolorowanie nawiasów  
+
+GitLens – zaawansowane funkcje Git  
+
+
+tak aby programowanie stało się przyjemniejsze 

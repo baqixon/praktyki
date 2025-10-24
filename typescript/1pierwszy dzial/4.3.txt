@@ -1,0 +1,6 @@
+aby usprawnić szybkość kodu użyłbym "rootDir": "./src" oraz "outDir": "./dist",
+ aby odzielić od siebie kod po i przed kompilacją do js. Wpisał bym do pliku "target":
+ "ES2022" aby kod korzystał z nowszych wersji, aby zmniejszyć rozmiar 
+pliku ustawiłbym "sourceMap" na false, a "removeComments" na true
+
+

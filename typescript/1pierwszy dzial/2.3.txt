@@ -1,0 +1,22 @@
+lepiej będzie zainstalować globalnie typescript 
+
+Użyj nodemon + ts-node do automatycznego uruchamiania
+
+nodemon automatycznie restartuje aplikację po zmianie plików.
+
+Zainstaluj:
+
+npm install -D nodemon ts-node
+
+
+Dodaj w package.json skrypt:
+
+"scripts": {
+  "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' nazwa_pliku.ts"
+}
+
+
+Uruchom:
+
+npm run dev
+VS Code Tasks pozwoli na użycie jednego terminala
